@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Billing App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🧾 Cash Register </h1> 
+    <center> <h3> 🇮🇳 JAI HIND 🇮🇳 </h3> </center>
+
+    <div class="input-group">
+      <label>Item Name:</label>
+      <input type="text" id="itemName" />
+      <label>Price (₹):</label>
+      <input type="number" id="itemPrice" />
+      <label>Quantity:</label>
+      <input type="text" id="itemQty" min="1" value="1"/>
+      <button onclick="addItem()">Add Item</button>
+    </div>
+
+    
+
+    <div class="payment-mode">
+      <h3>Choose a Payment Mode:</h3>
+      <label><input type="radio" name="payment" value="Cash" onchange="onPaymentChange()"> 💵 Cash</label>
+      <label><input type="radio" name="payment" value="Card" onchange="onPaymentChange()"> 💳 Card</label>
+      <label><input type="radio" name="payment" value="UPI" onchange="onPaymentChange()"> 📱 UPI</label>
+    </div>
+
+    <div id="cashSection" style="display: none;">
+      <label>Cash Given (₹):</label>
+      <input type="number" id="cashGiven" oninput="calculateChange()" />
+      <p id="changeOutput"></p>
+      
+    </div>
+  </div>
+ <div id="printArea">
+  <div class="receipt-box">
+    <div class="receipt-header">
+      <h2>🛍️ Lakshit Mart</h2>
+      <p> Navi Mumbai, Maharashtra</p>
+      <p>GSTIN: 27AABCU9603R1ZV</p>
+      <hr />
+    </div>
+
+    <div id="billContent">
+      <h3>🧾 BILL DETAILS</h3>
+      <div id="billList"></div>
+      <h3>Total: ₹<span id="totalAmount">0</span></h3>
+      <p id="paymentSummary"></p>
+      <p id="timestamp"></p>
+    </div>
+
+    <hr />
+    <div class="thankyou">
+      <p>🙏 Thank you for shopping with us!</p>
+      <p>Visit Again 🇮🇳</p>
+    </div>
+  </div>
+</div>
+  <button onclick="printBill()" class="print-btn">🖨️ Print Bill</button>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+

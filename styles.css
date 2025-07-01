@@ -1,0 +1,129 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #fff1d2, #fcb69f);
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 550px;
+  background: #181717;
+  margin: auto;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  color: #ffffff;
+}
+
+h1 {
+  text-align: center;
+  color: #ff4d4d;
+  margin-bottom: 25px;
+}
+
+h3{
+    font-size: 48px;
+  font-weight: bold;
+  background: linear-gradient(to right, #FF9933 33%, white 33%, white 66%, #138808 66%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input[type="text"],
+input[type="number"] {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  
+}
+
+button {
+  padding: 12px;
+  background: #ff4d4d;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #e33e3e;
+}
+
+.payment-mode {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: #fff; 
+}
+
+#billList {
+  margin-top: 20px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px dashed #aaa;
+  color: #138808;
+}
+
+#billList p {
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+#changeOutput {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #1e8449;
+}
+
+@media print {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background: white;
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .receipt-box {
+    border: 2px dashed black;
+    padding: 30px;
+    width: 320px;
+    text-align: center;
+    margin: auto;
+    page-break-inside: avoid;
+  }
+
+  .receipt-box h2,
+  .receipt-box h3,
+  .receipt-box p {
+    margin: 6px 0;
+  }
+
+  #billList p {
+    text-align: left;
+    margin: 4px 0;
+    padding-left: 10px;
+  }
+
+  input, button, .input-group, .payment-mode, #cashSection, .container, .print-btn {
+    display: none !important;
+  }
+}
+
